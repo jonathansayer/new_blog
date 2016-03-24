@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'resources' => 'resources#index'
-  end
+  end 
 end
