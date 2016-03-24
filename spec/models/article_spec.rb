@@ -11,7 +11,7 @@ RSpec.describe Article, :type => :model do
       expect(subject).to respond_to :body
     end
 
-    it 'has an author' do
+    it "belongs to an author" do
       expect(subject).to respond_to :author
     end
   end
