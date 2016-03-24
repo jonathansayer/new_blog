@@ -4,9 +4,9 @@ RSpec.describe "articles/index", type: :view do
   context 'it displays an article' do
 
     before(:each) do
-      @author = FactoryGirl.create(:author, first_name:"Jonathan", surname: "Sayer")
-      @article = FactoryGirl.create(:article, title: "Test", body:"Testing Body", author: @author)
-      assign(:articles, [@article])
+      author = FactoryGirl.create(:author, first_name:"Jonathan", surname: "Sayer")
+      article = FactoryGirl.create(:article, title: "Test", body:"Testing Body", author: author)
+      assign(:articles, [article])
     end
 
     it 'dispalys the Article title' do
@@ -33,12 +33,12 @@ RSpec.describe "articles/index", type: :view do
   context 'it displays all articles' do
 
     before(:each) do
-      @author = FactoryGirl.create(:author, first_name:"Jonathan Sayer", surname:"Sayer")
-      @article1 = FactoryGirl.create(:article, title:"Test1", body:"Test Body1", author: @author)
-      @article2 = FactoryGirl.create(:article, title:"Test2", body:"Test Body2", author: @author)
-      @article3 = FactoryGirl.create(:article, title:"Test3", body:"Test Body3", author: @author)
-      @articles = [@article1, @article2, @article3]
-      assign(:article, @articles)
+      author = FactoryGirl.create(:author, first_name:"Jonathan Sayer", surname:"Sayer")
+      article1 = FactoryGirl.create(:article, title:"Test1", body:"Test Body1", author: author)
+      article2 = FactoryGirl.create(:article, title:"Test2", body:"Test Body2", author: author)
+      article3 = FactoryGirl.create(:article, title:"Test3", body:"Test Body3", author: author)
+      articles = [article1, article2, article3]
+      assign(:articles, articles)
     end
 
     it 'displays all Article Titles' do
