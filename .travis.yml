@@ -6,7 +6,7 @@ script:
 env:
   - DB=postgresql
 before_script:
-  - cp config/database.yml{.travis,}
-  - cp config/secrets.yml{.travis,}
+  - cp config/database.yml{.example,}
+  - cp config/secrets.yml{.example,}
   - psql -c 'create database new_blog_test' -U postgres
 cache: bundler
