@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - 2.2.3
+  - 2.3.0
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec
+  - bundle exec rake
 env:
   - DB=postgresql
 before_script:
+  - cp config/database.yml{.travis,}
+  - cp config/secrets.yml{.travis,}
   - psql -c 'create database new_blog_test' -U postgres
-bundler_args: --binstubs=./bundler_stubs
+cache: bundler
