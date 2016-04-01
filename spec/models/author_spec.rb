@@ -1,7 +1,11 @@
 require "rails_helper"
 
 RSpec.describe Author, type: :model do
-  context 'An Author has a first name, surname and many articles' do
+  context 'An Author has a title, first name, surname and many articles' do
+    it "has a title" do
+      expect(subject).to respond_to :title
+    end
+
     it "has a first name" do
       expect(subject).to respond_to :first_name
     end
