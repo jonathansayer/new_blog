@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
   root 'articles#index'
 
   devise_for :admin, :skip => [:registrations, :sessions], controllers: { passwords: "admin/passwords" }

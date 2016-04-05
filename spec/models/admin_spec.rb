@@ -18,5 +18,11 @@ RSpec.describe Admin, type: :model do
     it 'has an email address' do
       expect(subject).to respond_to :email
     end
+
+    context 'Admin has a password' do
+      it 'has a password' do
+        expect(subject).to respond_to :password
+      end
+    end
   end
 end
