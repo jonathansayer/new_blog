@@ -7,6 +7,7 @@ feature 'Signing in ' do
      visit '/login'
      fill_in 'Email', with: "test@email.com"
      fill_in 'Password', with: "password"
-     click_button "Submit"
+     click_button "Log in"
+     expect(page.current_path).to eq root_path
    end
  end
