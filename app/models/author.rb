@@ -1,5 +1,9 @@
 class Author < ActiveRecord::Base
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   has_many :articles
-  validates :first_name, :surname, :email, presence: true
+
+  validates :first_name, :surname, presence: true
 end

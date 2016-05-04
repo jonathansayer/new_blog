@@ -18,6 +18,10 @@ RSpec.describe Author, type: :model do
       expect(subject).to respond_to :email
     end
 
+    it 'has a password' do
+      expect(subject).to respond_to :password
+    end
+
     it "has many articles" do
       expect(subject).to respond_to :articles
     end
