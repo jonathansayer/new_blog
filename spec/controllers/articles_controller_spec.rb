@@ -14,7 +14,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     it "loads all of the articles into @articles" do
-      article1, article2 = Article.create!, Article.create!
+      article1, article2 = FactoryGirl.create(:article), FactoryGirl.create(:article)
       get :index
       expect(assigns(:articles)).to match_array([article1, article2])
     end
