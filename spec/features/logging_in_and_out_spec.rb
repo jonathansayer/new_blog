@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Signing in ' do
    scenario 'Signing in with correct credentials' do
-     Admin.create(first_name: "Jonathan", surname: "Sayer", email: "test@email.com",
+     Author.create(first_name: "Jonathan", surname: "Sayer", email: "test@email.com",
                   password: "password", password_confirmation: "password")
      visit '/login'
      fill_in 'Email', with: "test@email.com"
